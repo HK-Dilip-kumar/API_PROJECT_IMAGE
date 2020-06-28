@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>API demonstartaion</title>
+	<style>
+		body{
+			background-color: #90EE90;
+		}
+		h1{
+			color: red;
+			text-align: center;
+			font-family: 'Hepta Slab', serif;
+		}
+		h2{
+			color: white;
+			text-align: center;
+			font-family: 'Hepta Slab', serif;
+			padding-top: 50px;
+		}
+		.box{
+			border: 2px solid black;
+			width: 600px;
+			height: 600px;
+			margin-left: 400px;
+			background-color: black;
+		}
+		input[type=text]{
+			padding-left: 100px;
+			margin-left: 200px;
+			color:white;
+			background-color: red;
+			padding: 8px;
+		}
+		button{
+			padding: 20px;
+			color: red;
+			background-color: blue;
+			font-size: 22px;
+			margin-left: 220px;
+		}
+
+	</style>
+<link href="https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@500&family=MuseoModerno:wght@300&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+		<h1>What does your name says about your personalty?</h1>
+		<div class="box">
+			<h2>ENTER YOUR NAME</h2>
+			<input id="nameid" type="text" name="inp"><br><br>
+			<img class="imgchange" style="padding-left: 150px;" src="Capture.PNG" height="220px" width="300px"><br><br><br>	
+			<button>SUBMIT</button>
+		</div>	
+</body>
+<script>
+	$(document).ready(function(){
+		$('button').click(function(){
+			const name=$('#nameid').val();
+			alert(name);
+			$('.imgchange').attr('src',`https://joeschmoe.io/api/v1/${name}`);
+			const b=$('.imgchange');
+			console.log(b);
+		});
+	});
+</script>
+</html>
